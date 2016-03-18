@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -18,9 +19,6 @@
     <context:property-placeholder location='classpath:application.properties' file-encoding="UTF-8"/>
 
     <bean id="scheduledJob" class="com.pefi.boilerplate.scheduled.ScheduledJobs" scope="singleton"/>
-    <task:scheduler id="scheduler"/>
+    <task:scheduler id="scheduler" pool-size="1"/>
 
-    <task:scheduled-tasks scheduler="scheduler">
-        <task:scheduled ref="scheduledJob" method="printCurrentTime" cron="${scheduler.printCurrentTime.interval}"/>
-    </task:scheduled-tasks>
 </beans>
