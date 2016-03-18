@@ -1,4 +1,4 @@
-package com.pefi.boilerplate;
+package com.pefi.boilerplate.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +21,5 @@ public class IndexController {
         logger.info("Testing logging");
         return "<h1>Welcome to " + name + "</h1>";
     }
-
 
 }
